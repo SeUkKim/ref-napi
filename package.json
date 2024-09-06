@@ -1,8 +1,8 @@
 {
-  "name": "ref-napi",
+  "name": "@eleccookie/ref-napi",
   "description": "Turn Buffer instances into \"pointers\"",
   "engines": {
-    "node": ">= 10.0"
+    "node": ">= 12.22.12"
   },
   "keywords": [
     "native",
@@ -21,7 +21,7 @@
     "64",
     "napi"
   ],
-  "version": "3.0.3",
+  "version": "0.0.1",
   "license": "MIT",
   "author": "Anna Henningsen <anna@addaleax.net>",
   "repository": {
@@ -30,27 +30,17 @@
   },
   "main": "./lib/ref.js",
   "scripts": {
-    "docs": "node docs/compile",
-    "test": "nyc mocha --expose-gc",
     "install": "node-gyp-build",
-    "prebuild": "prebuildify --napi --tag-armv",
-    "prepack": "prebuildify-ci download && ([ $(ls prebuilds | wc -l) = '5' ] || (echo 'Some prebuilds are missing'; exit 1))"
+    "prebuild": "prebuildify --napi --tag-armv --tag-uv --tag-libc"
   },
   "dependencies": {
-    "debug": "^4.1.1",
+    "debug": "^4.3.4",
     "get-symbol-from-current-process-h": "^1.0.2",
-    "node-addon-api": "^3.0.0",
-    "node-gyp-build": "^4.2.1"
+    "node-addon-api": "^3.2.1",
+    "node-gyp-build": "^4.5.0"
   },
   "devDependencies": {
-    "dox": "0.9.0",
-    "highlight.js": "^10.0.0",
-    "jade": "^1.11.0",
-    "marked": "^1.0.0",
-    "mocha": "^7.1.1",
-    "nyc": "^15.0.0",
-    "prebuildify": "^3.0.4",
-    "prebuildify-ci": "^1.0.5",
+    "prebuildify": "^5.0.1",
     "weak-napi": "^2.0.0"
   }
 }
