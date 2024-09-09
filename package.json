@@ -21,7 +21,7 @@
     "64",
     "napi"
   ],
-  "version": "0.0.1",
+  "version": "0.0.2",
   "license": "MIT",
   "author": "Anna Henningsen <anna@addaleax.net>",
   "repository": {
@@ -29,6 +29,7 @@
     "url": "git://github.com/node-ffi-napi/ref-napi.git"
   },
   "main": "./lib/ref.js",
+  "types": "types/index.d.ts",
   "scripts": {
     "install": "node-gyp-build",
     "prebuild": "prebuildify --napi --tag-armv --tag-uv --tag-libc"
@@ -40,6 +41,7 @@
     "node-gyp-build": "^4.5.0"
   },
   "devDependencies": {
+    "@types/node": "^22.5.4",
     "prebuildify": "^5.0.1",
     "weak-napi": "^2.0.0"
   }
